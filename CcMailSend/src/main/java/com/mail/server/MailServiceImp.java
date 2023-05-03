@@ -29,6 +29,7 @@ public class MailServiceImp implements MailService {
 	  @Autowired
 	  private TemplateEngine templateEngine;
 	  
+	  @Override
 	  public void mailSend(String From){
 	    try {
 	      FileInputStream names = new FileInputStream(new File("currentDir + File.separator" + "Meal.xlsx"));
