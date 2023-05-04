@@ -9,7 +9,7 @@ import com.mail.server.MailServiceImp;
 @Configuration
 public class Config {
 	@Bean
-	  public MailService mailService() {
+	public MailService mailService() {
 	    return (MailService)new MailServiceImp();
 	  }
 
