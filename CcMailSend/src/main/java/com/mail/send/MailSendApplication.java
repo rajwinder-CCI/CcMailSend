@@ -10,6 +10,7 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 
 import com.mail.server.MailService;
+import com.mail.server.MailServiceImp;
 
 @SpringBootApplication
 public class MailSendApplication implements CommandLineRunner {
@@ -18,17 +19,23 @@ public class MailSendApplication implements CommandLineRunner {
 	private MailService mailService;
 
 	public static void main(String[] args) {
-		SpringApplication.run(MailSendApplication.class, args);
+		SpringApplication.run(com.mail.send.MailSendApplication.class, args);
 	}
 
 //	@EventListener({ ApplicationReadyEvent.class })
 //	public void mail() throws MessagingException {
 //		mailService.mailSend("hr@caeliusconsulting.com");
-//		
-//	}
+//		}
+	
 	@Override
-	@EventListener({ ApplicationReadyEvent.class })
 	public void run(String... args) throws MessagingException {
 		mailService.mailSend("hr@caeliusconsulting.com");
-}
+	}
+
+//	@Override
+//	@EventListener({ ApplicationReadyEvent.class })
+//	public void run(String... args) throws MessagingException {
+//		mailService.mailSend("hr@caeliusconsulting.com");
+//}
+	
 }
